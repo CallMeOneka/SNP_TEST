@@ -12,16 +12,16 @@ let App = () => {
     <div className={style.container}>
       <HeaderContainer />
       <Switch>
-        <Route path='/login' exact>
+        <Route path="/login" exact>
           <LoginContainer />
         </Route>
-        <Route path='/testedit'>
+        <Route path="/testedit">
           <TestEditContainer />
         </Route>
-        <Route path='/registry'>
+        <Route path="/registry">
           <RegistryContainer />
         </Route>
-        <Route path='/'>
+        <Route path="/">
           <TestMainPageContainer />
         </Route>
       </Switch>

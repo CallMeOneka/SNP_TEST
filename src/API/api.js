@@ -1,16 +1,16 @@
 import * as axios from "axios";
 
 const instanse = axios.create({
+  withCredentials: true,
   baseURL: "https://snp-tests.herokuapp.com/api/v1/",
   headers: {
-    "scope-key": "bZZ7B5GJjhGuD2pv",
+    "scope-key": "jUnjhQ94GA3JNyHH",
   },
-  withCredentials: true,
 });
 
-export const api = {
+export const authApi = {
   signin(params) {
-    console.log(params)
+    console.log(params);
     return instanse.post("signin", params).then((response) => {
       return response.data;
     });
@@ -29,5 +29,30 @@ export const api = {
     return instanse.delete("logout").then((response) => {
       return response.data;
     });
+  },
+};
+export const testApi = {
+  getTestList() {
+    const params = {
+      page: 1,
+      per: 5,
+      search: "",
+      sort: "created_at_desc",
+    };
+    return instanse.get("tests", params).then((response) => {
+      return response.data;
+    });
+  },
+  createTest(params) {
+    return instanse.post("tests", params).then((response) => {
+      return response.data;
+    });
+  },
+  createQuestion(test_id, params) {
+    return instanse
+      .post(`tests/${test_id}/questions`, params)
+      .then((response) => {
+        return response.data;
+      });
   },
 };

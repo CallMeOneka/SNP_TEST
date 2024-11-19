@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { openClose } from "../redux/reducers/modalReducer";
 import { selectIsAuth, selectUserName } from "../redux/selectors/authSelector";
 import Header from "./Header";
 

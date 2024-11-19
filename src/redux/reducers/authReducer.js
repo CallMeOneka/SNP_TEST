@@ -15,22 +15,22 @@ const authSlice = createSlice({
     LOGIN: (state, action) => {
       state.isAuth = true;
       state.username = action.payload.username;
-      state.id = action.payload.id
+      state.id = action.payload.id;
       state.is_admin = action.payload.is_admin;
       state.error = "";
     },
-    LOGOUT: (state, action) =>{
+    LOGOUT: (state, action) => {
       state.isAuth = false;
       state.username = "";
       state.id = "";
       state.is_admin = false;
     },
-    LOGIN_ERROR: (state, action) =>{
+    LOGIN_ERROR: (state, action) => {
       state.error = action.payload;
     },
   },
 });
 
-export const {LOGIN, LOGOUT, LOGIN_ERROR} = authSlice.actions;
+export const { LOGIN, LOGOUT, LOGIN_ERROR } = authSlice.actions;
 
 export default authSlice.reducer;

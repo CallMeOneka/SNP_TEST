@@ -2,6 +2,9 @@ import React from "react";
 import style from "./TestEdit.module.scss";
 
 const TestEdit = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const create_test = queryParams.get("createtest");
+  console.log(create_test);
   return (
     <div className={style.container}>
       <div className={style.testName}>

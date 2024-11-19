@@ -5,6 +5,7 @@ import { selectAuthError } from "../redux/selectors/authSelector";
 
 const RegistryContainer = () => {
   const dispatch = useDispatch();
+  let error = useSelector(selectAuthError);
 
   const handleSubmitSignUp = useCallback(
     (username, password, password_confirmation, is_admin) => {
@@ -16,7 +17,7 @@ const RegistryContainer = () => {
     [dispatch]
   );
 
-  return <Registry handleSubmitSignUp={handleSubmitSignUp} />;
+  return <Registry handleSubmitSignUp={handleSubmitSignUp} error={error} />;
 };
 
 export default RegistryContainer;

@@ -8,7 +8,6 @@ const Registry = (props) => {
     setLogin(e.target.value);
   };
   let [password, setPassword] = useState("");
-  console.log(password);
   let handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
@@ -29,6 +28,7 @@ const Registry = (props) => {
     <div className={style.registryContainer}>
       <form className={style.registryForm} onSubmit={handleSubmitForm}>
         <h1>Sing up to the system</h1>
+        {props.error ? <p className={style.error}>{props.error}</p> : <p></p>}
         <label htmlFor="login">Enter your login</label>
         <input
           type="text"
