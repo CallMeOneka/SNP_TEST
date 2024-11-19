@@ -3,23 +3,23 @@ import { Link } from "react-router-dom";
 import style from "./Registry.module.scss";
 
 const Registry = (props) => {
-  let [login, setLogin] = useState("");
-  let handleChangeLogin = (e) => {
+  const [login, setLogin] = useState("");
+  const handleChangeLogin = (e) => {
     setLogin(e.target.value);
   };
-  let [password, setPassword] = useState("");
-  let handleChangePassword = (e) => {
+  const [password, setPassword] = useState("");
+  const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
-  let [confirmPassword, setConfirmPassword] = useState("");
-  let handleChangeConfirmPassword = (e) => {
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const handleChangeConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
   };
-  let [isAdmin, setIsAdmin] = useState(false);
-  let handleIsAdminCheckbox = (e) => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const handleIsAdminCheckbox = (e) => {
     setIsAdmin(!isAdmin);
   };
-  let handleSubmitForm = (e) => {
+  const handleSubmitForm = (e) => {
     e.preventDefault();
     props.handleSubmitSignUp(login, password, confirmPassword, isAdmin);
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./../Modal.module.scss";
 import style from "./ModalCreate.module.scss";
 
@@ -12,7 +12,26 @@ const ModalCreate = (props) => {
             &times;
           </span>
         </div>
-        <div className={s.modalContent}></div>
+        <div className={s.modalContent}>
+          <input
+            type='text'
+            value={props.title}
+            onChange={props.handleChangeTitle}
+          />
+          <div className={style.acceptButtons}>
+            {props.title ? (
+              <button className='black_button' onClick={props.handleCreateTest}>
+                Ok
+              </button>
+            ) : (
+              ""
+            )}
+
+            <button className='white_button' onClick={props.handleOpenClose}>
+              Cancel
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

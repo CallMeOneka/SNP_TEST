@@ -9,10 +9,10 @@ const Header = (props) => {
   };
   return (
     <div className={style.container}>
-      <Link to="/">
+      <Link to="/?search=&page=1&sort=created_at_desc">
         <img src={logo} alt="logo" className={style.logoImg} />
       </Link>
-      <Link to="/">
+      <Link to="/?search=&page=1&sort=created_at_desc">
         <h1>Quizzy Tests</h1>
       </Link>
 

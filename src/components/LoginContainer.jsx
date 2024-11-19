@@ -5,8 +5,7 @@ import Login from "./Login/Login";
 
 const LoginContainer = () => {
   const dispatch = useDispatch();
-  let error = useSelector(selectAuthError);
-  console.log(error);
+  const error = useSelector(selectAuthError);
 
   const handleSubmitSignIn = useCallback(
     (username, password) => {
